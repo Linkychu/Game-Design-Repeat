@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - SpawnPoint
+  - Rooms
+  - Item
+  - NPC
+  - RNG
+  - Pillar
+  - WallP
+  - Maze
+  - PillarSpawn
+  - StairSpawn
+  - BossDoor
+  - Corner
+  - CrossRoad
+  - Straight
+  - Tjunction
+  - Astar
+  - CinemachineTarget
+  - Skeleton
+  - EnemyP
+  - Slots
+  - Slot1
+  - BossKeyDoor
+  - Ally
+  - Enemy
+  - FxTemporaire
+  - Potion
+  - Mana
+  - StatBoost
+  - Floor
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Pillar
+  - Wall
+  - Player
+  - Boss
+  - PostProcessing
+  - Room
+  - Enemy
+  - Chest
+  - BossEntrance
+  - Allies
+  - Affect Allies
+  - Affect Enemies
+  - MapLayer
+  - Effect
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a28ff325424c3d8d9094de8a15edb4, type: 3}
+  m_Name: DefenseBoost
+  m_EditorClassIdentifier: 
+  rateOfAppearing: 10
+  item: {fileID: 5164130222859052032, guid: 8cacb9e9f0fc3284e8c3388c08392efd, type: 3}
+  type: 2
+  description: Boosts Defense by a Small Amount
+  image: {fileID: 21300000, guid: 1ff1eed8619aab14d8a08b48e246da8c, type: 3}
+  maxAmount: 3
+  minAmount: 1
+  HealAmount: 2
+  Boost: 2

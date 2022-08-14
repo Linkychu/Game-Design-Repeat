@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f3c7e54b425194abc2202227d0761d, type: 3}
+  m_Name: Template
+  m_EditorClassIdentifier: 
+  VerticalStraight:
+    prefab: {fileID: 6071347243314199431, guid: 60763a35aec1ee04e93022ce6187e65d, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
+  HorizontalStraight:
+    prefab: {fileID: 6071347243314199431, guid: 60763a35aec1ee04e93022ce6187e65d, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  CrossRoad:
+    prefab: {fileID: 5463772324748348702, guid: abb98760bda50224e9a14a6c4321cea6, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  RightUpCorner:
+    prefab: {fileID: 1823144635415697500, guid: cf5e987ca9890a84bb7173d70958a636, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
+  RightDownCorner:
+    prefab: {fileID: 1823144635415697500, guid: cf5e987ca9890a84bb7173d70958a636, type: 3}
+    rotation: {x: 0, y: 270, z: 0}
+  LeftUpCorner:
+    prefab: {fileID: 1823144635415697500, guid: cf5e987ca9890a84bb7173d70958a636, type: 3}
+    rotation: {x: 0, y: 180, z: 0}
+  LeftDownCorner:
+    prefab: {fileID: 1823144635415697500, guid: cf5e987ca9890a84bb7173d70958a636, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  T_intersection:
+    prefab: {fileID: 8607793130307222492, guid: 5d57c23bcee0bb94bb9cc4c45090d36c, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
+  T_intersectionUpsideDown:
+    prefab: {fileID: 8607793130307222492, guid: 5d57c23bcee0bb94bb9cc4c45090d36c, type: 3}
+    rotation: {x: 0, y: 270, z: 0}
+  T_intersectionLeft:
+    prefab: {fileID: 8607793130307222492, guid: 5d57c23bcee0bb94bb9cc4c45090d36c, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  T_intersectionRight:
+    prefab: {fileID: 8607793130307222492, guid: 5d57c23bcee0bb94bb9cc4c45090d36c, type: 3}
+    rotation: {x: 0, y: 180, z: 0}
+  Endpiece:
+    prefab: {fileID: 3968870293658955008, guid: 59d34a7bf951e074aa4adcde2d7b330c, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
+  EndpieceUpsideDown:
+    prefab: {fileID: 3968870293658955008, guid: 59d34a7bf951e074aa4adcde2d7b330c, type: 3}
+    rotation: {x: 0, y: 270, z: 0}
+  EndpieceRight:
+    prefab: {fileID: 3968870293658955008, guid: 59d34a7bf951e074aa4adcde2d7b330c, type: 3}
+    rotation: {x: 0, y: 180, z: 0}
+  EndpieceLeft:
+    prefab: {fileID: 3968870293658955008, guid: 59d34a7bf951e074aa4adcde2d7b330c, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  WallPieceTop:
+    prefab: {fileID: 1457450357151984461, guid: 0ad3f286940b89546b2883f976da4f83, type: 3}
+    rotation: {x: 0, y: 180, z: 0}
+  WallPieceBottom:
+    prefab: {fileID: 1457450357151984461, guid: 0ad3f286940b89546b2883f976da4f83, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  WallPieceRight:
+    prefab: {fileID: 1457450357151984461, guid: 0ad3f286940b89546b2883f976da4f83, type: 3}
+    rotation: {x: 0, y: 270, z: 0}
+  WallPieceLeft:
+    prefab: {fileID: 1457450357151984461, guid: 0ad3f286940b89546b2883f976da4f83, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
+  FloorPiece:
+    prefab: {fileID: 8622545288010592857, guid: 38e8f86a72cb8d34f8781529f4404ac9, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  CeilingPiece:
+    prefab: {fileID: 9123487575950170822, guid: a5bc34204742fc5459657994ce7b9ccb, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  Pillar:
+    prefab: {fileID: 5045349165014527288, guid: d6ea882d4d18ba74a944733914a6b353, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  DoorWayUp:
+    prefab: {fileID: 6701827632326833907, guid: be6c0e1052b56ca46b27840a9d5f6662, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  DoorWayDown:
+    prefab: {fileID: 6701827632326833907, guid: be6c0e1052b56ca46b27840a9d5f6662, type: 3}
+    rotation: {x: 0, y: 180, z: 0}
+  DoorWayRight:
+    prefab: {fileID: 6701827632326833907, guid: be6c0e1052b56ca46b27840a9d5f6662, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
+  DoorWayLeft:
+    prefab: {fileID: 6701827632326833907, guid: be6c0e1052b56ca46b27840a9d5f6662, type: 3}
+    rotation: {x: 0, y: 270, z: 0}
+  WallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  BossStairRoom: {fileID: 3453897193734796206, guid: 90cce2741db9f2648bbdb11ef1206268, type: 3}
+  BossRoom: {fileID: 0}
+  enemies:
+  - {fileID: 11400000, guid: 9784a31b35f2584438da5f4ed47a7246, type: 2}
+  - {fileID: 11400000, guid: b772f39d1de76814d98c1cd1c53ea25c, type: 2}
+  - {fileID: 11400000, guid: 5d5ee71be5452e146a875d91f38722a8, type: 2}
+  - {fileID: 11400000, guid: d7d38ab3725dd994c9d2d040403d17f8, type: 2}
+  - {fileID: 11400000, guid: f06dea8969d7e8f47b3967f3495398ce, type: 2}

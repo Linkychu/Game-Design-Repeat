@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cffb2e33310f90042a56f818ae2d667f, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  Name: Player
+  BaseHP: 120
+  BaseAttack: 100
+  BaseDefense: 100
+  BaseSpecial: 100
+  BaseSpeed: 100
+  BaseManaAmount: 100
+  type: {fileID: 11400000, guid: 4c2770c5b1c770346b1f0d004862a3f4, type: 2}
+  myStatus: 1
+  DeathMessage: {fileID: 0}
