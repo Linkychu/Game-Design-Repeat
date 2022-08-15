@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using General;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -11,20 +15,29 @@ namespace Player
         public List<Transform> players = new List<Transform>();
         public Transform[] slots;
 
-        public Transform[] Allies;
+        public List<Transform> Allies = new List<Transform>();
 
-        public GameObject[] models;
+        public CharacterData[] models;
 
 
         public bool ableToSpawnAllies;
+
+        public Transform allyObject;
+        
 
         public List<Color> playerSpriteColors = new List<Color>();
         public List<Transform> AliveAllies = new List<Transform>();
         public static PlayerManager instance { get; private set; }
 
-
+        public Transform spawnPos;
+        private Transform parent;
+        public LayerMask groundMask;
         private Vector3[] slotPos = new Vector3[3];
+        private GameObject model;
 
+        private int count;
+
+        private List<GameObject> SpawnedModels = new List<GameObject>();
         private void Awake()
         {
             if (instance == null)
@@ -32,12 +45,17 @@ namespace Player
                 instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-
             else
             {
                 Destroy(gameObject);
             }
             players.Add(GameObject.FindObjectOfType<PlayerClass>().transform);
+            parent = GameObject.FindWithTag("Ally1").transform;
+            count = 0;
+            foreach (Transform child in parent)
+            {
+                Allies.Add(child);
+            }
             //players[0].gameObject.SetActive(false);
             //SpawnAllies();
         }
@@ -50,30 +68,42 @@ namespace Player
             {
                 slotPos[i] = slots[i].position;
             }
+
+           
         }
 
+
+        public void SpawnNavmesh()
+        {
+            
+           
+        }
         public void SpawnAllies()
         {
-            for (int i = 0; i < Allies.Length; i++)
+            allyObject.position = players[0].position;
+            for (int i = 0; i < Allies.Count; i++)
             {
-                var model = Instantiate(models[i], Allies[i].position, Quaternion.identity, Allies[i]);
-                model.GetComponent<PartyFollow>().index = i;
+                models[i].Spawn(new Vector3(Allies[i].position.x, -2f, Allies[i].position.z), new Vector3(Allies[i].position.x, players[0].transform.position.y, Allies[i].position.z), Allies[i].transform, i);
+               
 
-                if (players.Count > Allies.Length)
+                if (players.Count > Allies.Count)
                 {
-                    Destroy(model);
+                    Destroy(models[i].model.gameObject);
                 }
 
                 else
                 {
-                    players.Add(model.transform);
-                    AliveAllies.Add(model.transform);
+                    players.Add(models[i].model.gameObject.transform);
+                    
 
                 }
+                
+               
             }
 
-          
 
+
+            AliveAllies = players;
             playerSpriteColors.Add(Color.red);
             playerSpriteColors.Add(Color.blue);
             playerSpriteColors.Add(Color.yellow);
@@ -84,37 +114,48 @@ namespace Player
 
         public void ResetPositions()
         {
+            Allies.Clear();
+            parent = GameObject.FindWithTag("Ally1").transform;
             
-           players[0].position = Vector3.zero;
-         
-
-            foreach (var ally in Allies)
+            foreach (Transform child in parent)
             {
-                ally.GetComponentInChildren<NavMeshAgent>().isStopped = true;
+                if (child.TryGetComponent(out AllyClass ally))
+                {
+                    Destroy(ally.gameObject);
+                }
+               
+                Allies.Add(child);
             }
+            transform.position = Vector3.zero;
+
+            players[0].position = spawnPos.transform.position;
+            
+            StartCoroutine(Place());
+        }
+
+        IEnumerator Place()
+        {
+            
+            yield return new WaitUntil(() => players[0].GetComponent<CharacterController>().isGrounded);
+                //allyObject.position = new Vector3(players[0].position.x, players[0].position.y, players[0].position.z);
 
             for (int i = 0; i < slots.Length; i++)
             {
-                slotPos[i] = slots[i].position;
+                    models[i].Spawn(Allies[i].position,
+                        new Vector3(Allies[i].position.x, Allies[i].position.y + 0.1f, Allies[i].position.z), Allies[i],
+                        i);
+                    if ((!AliveAllies.Contains(models[i].model.transform)))
+                    {
+                        Destroy(models[i].model.gameObject);
+                    }
+
+                    
             }
-
-            for (var index = 0; index < Allies.Length; index++)
-            {
-                Transform ally = Allies[index];
-                var agent = ally.GetComponentInChildren<NavMeshAgent>();
-                agent.enabled = false;
-                Transform AllyParent = Allies[index].transform;
-                AllyParent.position = new Vector3(0, -11.8f, 0);
-                agent.enabled = true;
-                agent.Warp(new Vector3(0, agent.transform.position.y + 0.1f, 0));
-                agent.isStopped = false;
-
-            }
-
-           
             
-           
+            
+            Debug.Log("work");
             
         }
+
     }
 }

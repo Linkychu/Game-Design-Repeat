@@ -8,6 +8,7 @@ public class AttackEffect : MonoBehaviour
 {
     public Moves move;
     public bool shouldMove;
+    public bool isDynamicRanged;
 
     private Rigidbody rb;
 
@@ -18,7 +19,12 @@ public class AttackEffect : MonoBehaviour
     void Start()
     {
         _collider = GetComponent<SphereCollider>();
-        _collider.radius = move.range;
+
+        if (!isDynamicRanged)
+        {
+            _collider.radius = move.range;
+        }
+
         Destroy(this.gameObject, move.lifetime);
        
     }

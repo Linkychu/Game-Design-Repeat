@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Dragon
   BaseHP: 500
-  BaseAttack: 200
-  BaseDefense: 200
-  BaseSpecial: 200
-  BaseSpeed: 200
+  BaseAttack: 100
+  BaseDefense: 100
+  BaseSpecial: 100
+  BaseSpeed: 100
   BaseManaAmount: 9999999
   type: {fileID: 11400000, guid: 1ff6ef145c64c0f4aba72b88b4e0e4f6, type: 2}
   myStatus: 0

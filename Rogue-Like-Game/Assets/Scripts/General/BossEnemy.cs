@@ -7,8 +7,8 @@ namespace General
     public class BossEnemy : ScriptableObject
     {
         public CharacterBase charBase;
-        public GameObject model;
         public CharacterValues values;
         public AttackEffect[] moves;
+        
     }
 }

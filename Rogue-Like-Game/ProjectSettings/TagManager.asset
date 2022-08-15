@@ -33,6 +33,10 @@ TagManager:
   - Mana
   - StatBoost
   - Floor
+  - BossUI
+  - Ally1
+  - SpawnPos
+  - Inventory
   layers:
   - Default
   - TransparentFX

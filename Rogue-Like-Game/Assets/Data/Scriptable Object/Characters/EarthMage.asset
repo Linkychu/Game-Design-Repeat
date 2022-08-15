@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4c759fe2fa420d99ecb0bb64b935e9, type: 3}
+  m_Name: EarthMage
+  m_EditorClassIdentifier: 
+  model: {fileID: 4751269381477909661, guid: fd67612b3647de844b20604b2f3cd704, type: 3}
+  CharacterBase: {fileID: 11400000, guid: 7f39684f86b030e4aa157d50b465cfee, type: 2}
+  values: {fileID: 11400000, guid: 1300eae4826a0104fb451a4fe075d602, type: 2}
+  MinLevel: 10
+  MaxLevel: 30
+  Level: 0

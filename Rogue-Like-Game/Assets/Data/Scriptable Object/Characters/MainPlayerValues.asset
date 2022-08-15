@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41099915d3f443e584f736e54cec2d55, type: 3}
   m_Name: MainPlayerValues
   m_EditorClassIdentifier: 
-  MaxHP: 0
-  CurrentHP: 0
-  CurrentMP: 0
-  MaxMana: 0
+  myStats:
+    level: 10
+    userName: 
+    MaxHP: 147
+    currentHP: 147
+    currentMana: 338
+    isDead: 0
+    maxMana: 338
+    Attack: 221
+    Defense: 217
+    Special: 121
+    Speed: 221

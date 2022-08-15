@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enemy;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BossBattleManager : MonoBehaviour
@@ -13,12 +15,19 @@ public class BossBattleManager : MonoBehaviour
 
     public GameObject BossSoundObject;
     [SerializeField] private float Seconds = 10;
+    
     // Start is called before the first frame update
     void Start()
     {
         BossSoundObject.SetActive(false);
         TriggerScript.OnPlayerEnterTrigger += OnPlayerEnterTrigger;
         BossSlider.transform.parent.gameObject.SetActive(false);
+        FindObjectOfType<BossClass>().OnBossDeath += OnBossDeath;
+    }
+
+    private void OnBossDeath()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void OnPlayerEnterTrigger(object sender, EventArgs e)

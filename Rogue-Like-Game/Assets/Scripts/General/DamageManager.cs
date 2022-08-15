@@ -25,12 +25,11 @@ namespace General
         {
             float damageRate = UnityEngine.Random.Range(0.9f, 1);
             
-            Debug.Log("Damage rate: " + damageRate);
             //player does the damage and checks whether or not what we hit is resisted by it
             float ratio = enemyAffinity.DamageMultiplier(affinity);
             // ReSharper disable once PossibleLossOfFraction
 
-            int  attackDefRatio = type == MoveType.Physical ? Mathf.FloorToInt((1.5f * BaseAttack * AttackModifier) / EnemyDefence * enemyDefenseModifier) : Mathf.FloorToInt((2.5f * BaseSpecial * SpecialModifier) / EnemySpecial * EnemySpecialModifier);
+            int  attackDefRatio = type == MoveType.Physical ? Mathf.FloorToInt( (BaseAttack * AttackModifier) / EnemyDefence * enemyDefenseModifier) : Mathf.FloorToInt((BaseSpecial * SpecialModifier) / EnemySpecial * EnemySpecialModifier);
 
             int CritChance = UnityEngine.Random.Range(0, 100);
             if (CritChance < CritRate)
@@ -44,7 +43,7 @@ namespace General
             }
             
             int result =
-                Mathf.FloorToInt(((((((2 * BaseLevel) / 5) + 2) * skillDamage * attackDefRatio) / 50) + 2) * ratio * Critical); 
+                Mathf.FloorToInt(((((((2 * BaseLevel) / 5) + 2) * skillDamage * attackDefRatio) / 50) + 2) * ratio * damageRate * Critical); 
            
            
            

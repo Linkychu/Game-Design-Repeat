@@ -85,3 +85,9 @@ Dragon For Boss Monster : HP - Dungeon Manson
 --OTHER ASSETS--
 
 MIXAMO
+
+-- TUTORIAL CREDITS--
+https://www.udemy.com/course/procedural-maze-dungeon-generation/ 
+BRACKEYS
+
+https://www.youtube.com/watch?v=BIyYldTyyR8&t=347s - Random AI pathfinding

@@ -9,7 +9,7 @@ namespace General
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                SceneManagerScript.instance.LoadBossScene("BattleScene");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

@@ -14,10 +14,11 @@ public enum MoveType
         public MoveType type;
         public Affinities affinity;
         public int manaCost;
-        public GameObject model;
         public Vector3 rotationOffset;
         public float range;
         public float lifetime;
+        
+        [HideInInspector]
         public CharacterClass user;
         
         /*public void Spawn(Vector3 position, Transform transform)

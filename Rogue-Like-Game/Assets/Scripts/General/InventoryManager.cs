@@ -36,13 +36,7 @@ public class InventoryManager : MonoBehaviour
             //DontDestroyOnLoad(gameObject);
         }
 
-        foreach (Transform image in buttonParent)
-        {
-            Button button = image.GetComponentInChildren<Button>();
-            InventorySlots.Add(button);
-            button.interactable = false;
-            button.GetComponentInChildren<TextMeshProUGUI>().text = String.Empty;
-        }
+       
 
         /*else
         {
@@ -53,6 +47,13 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (Transform image in buttonParent)
+        {
+            Button button = image.GetComponentInChildren<Button>();
+            InventorySlots.Add(button);
+            button.interactable = false;
+            button.GetComponentInChildren<TextMeshProUGUI>().text = String.Empty;
+        }
         inventoryCanvas.SetActive(false);
     }
 

@@ -25,10 +25,6 @@ namespace AIStateManager
         // Update is called once per frame
         void Update()
         {
-            if (gameObject.CompareTag("Ally"))
-            {
-                Debug.Log($"Name: {gameObject.name}, State:  {currentState} ");
-            }
 
             RunStateMachine();
         }

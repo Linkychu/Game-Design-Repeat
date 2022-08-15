@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class SpawnItem : MonoBehaviour
@@ -26,7 +27,9 @@ public class SpawnItem : MonoBehaviour
     private void Start()
     {
        
-
+        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Dungeon"))
+            return;
+        
         foreach (var nItem in PossibleItems)
         {
             if (nItem.type is ItemType.Regular or ItemType.Consumable or ItemType.Gold)
@@ -54,6 +57,8 @@ public class SpawnItem : MonoBehaviour
     }
     void GenerateKeyItems()
     {
+        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Dungeon"))
+            return;
         int failure = 0;
         int i = 0;
         List<GameObject> KeyChests = new List<GameObject>();

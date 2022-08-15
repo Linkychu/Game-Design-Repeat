@@ -10,6 +10,7 @@ public class RNG : MonoBehaviour
 {
     private static RNG RandomController { get; set; }
     public int InitSeed;
+    public bool isNotAnInstance = true;
     [SerializeField]private bool useRandomSeed;
 
 
@@ -17,6 +18,8 @@ public class RNG : MonoBehaviour
     public static Random random;
     private void Awake()
     {
+        if(isNotAnInstance == false)
+            return;
         if (RandomController == null)
             
         {

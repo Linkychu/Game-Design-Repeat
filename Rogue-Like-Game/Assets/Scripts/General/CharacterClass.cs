@@ -41,7 +41,7 @@ public class CharacterClass : MonoBehaviour, IDamageable
     public CharacterBase charBase;
     private StatBoost boosts;
 
-
+    public bool isSetLevel;
 
     
 
@@ -78,7 +78,7 @@ public class CharacterClass : MonoBehaviour, IDamageable
         
        
         
-        if (!isPlayer)
+        if (!isPlayer && !isSetLevel)
         {
             values.myStats.level = RNG.RngCallRange(minLevel, maxLevel);
            
@@ -96,7 +96,7 @@ public class CharacterClass : MonoBehaviour, IDamageable
 
     public void OnLevelUp()
     {
-        Debug.Log("levelUp");
+        
         int oldEXP = level.experience;
         int newexp = level.GetXPforLevel(values.myStats.level);
         level.experience = 0;

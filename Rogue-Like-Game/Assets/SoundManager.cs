@@ -27,22 +27,14 @@ public class SoundManager : MonoBehaviour
 
     public void Volume(float amount)
     {
-        if (!muted)
-        {
-            Debug.Log("amount");
-            mixer.SetFloat("Volume", amount);
-            
-        }
-    }
-
-    public void MuteSounds(bool value)
-    {
-        if (value)
-        {
-            mixer.SetFloat("Volume", 0);
-        }
         
-        muted = value;
+        Debug.Log("amount");
+        AudioSource[] soundSources = FindObjectsOfType<AudioSource>();
+        foreach (var sound in soundSources)
+        {
+            sound.volume = amount;
+        }
 
     }
+    
 }

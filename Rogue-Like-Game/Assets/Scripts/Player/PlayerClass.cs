@@ -23,8 +23,7 @@ public class PlayerClass : CharacterClass, IDamageable, IHealable, IBoostable
         
         charBase = (CharacterBase) Instantiate(charBase);
         
-        gameObject.name = charBase.Name; 
-        DontDestroyOnLoad(gameObject);
+        gameObject.name = charBase.Name;
         values.myStats.level = Level;
     }
 

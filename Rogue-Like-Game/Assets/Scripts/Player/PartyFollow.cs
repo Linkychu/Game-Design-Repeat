@@ -72,14 +72,18 @@ namespace Player
             playerController = player.GetComponent<CharacterController>();
             agentSpeed = Agent.speed;
             Agent.acceleration = 100;
+            
 
             if (_animator == null)
             {
                 _animator = GetComponent<Animator>();
             }
+            
+            //Invoke("SpawnAgent", Time.fixedDeltaTime);
             // target = playerTarget;
         }
 
+      
         
 
         void Idle()

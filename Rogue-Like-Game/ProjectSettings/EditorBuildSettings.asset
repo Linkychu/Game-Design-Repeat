@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Village.unity
+    path: Assets/Scenes/ChoseAlly.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 42d1618f0b64d2e4d8c59f72e76531cf
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 461fd95138981f045991e648f2247c34
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: f465afd7a759b7b42bac937f646480d3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

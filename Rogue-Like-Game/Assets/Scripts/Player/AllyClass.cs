@@ -11,11 +11,18 @@ public class AllyClass : CharacterClass, IDamageable, IBoostable
     public CharacterValues myValues;
     private void Awake()
     {
-        values = (CharacterValues) Instantiate(values);
-        charBase = (CharacterBase) Instantiate(charBase);
+        
         gameObject.name = charBase.Name;
-        DontDestroyOnLoad(gameObject);
+        
     }
+
+    internal void LoadStats(CharacterValues value, CharacterBase characterBase)
+    {
+        values = (CharacterValues) Instantiate(value);
+        charBase = (CharacterBase) Instantiate(characterBase);
+
+    }
+    
 
     
     public override void Death()

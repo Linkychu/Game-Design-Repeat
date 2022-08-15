@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff1f427b1794a74add561f33fa00b34, type: 3}
   m_Name: Dragon
   m_EditorClassIdentifier: 
-  charBase: {fileID: 0}
-  model: {fileID: 0}
-  values: {fileID: 0}
-  moves: []
+  charBase: {fileID: 11400000, guid: f9738d946baf07f4a81930cb31ddd247, type: 2}
+  values: {fileID: 11400000, guid: a73a8115bf14bb24990e4ceb494d9987, type: 2}
+  moves:
+  - {fileID: 4253418637274953717, guid: 65b9e0d4cf99f8a48873d96a84472e0c, type: 3}
+  - {fileID: 3537546211765739191, guid: ddb29a0c1f3459741a16cac3b095f269, type: 3}
+  - {fileID: 3537546211765739191, guid: 6e0f27476b875ba478599f92251daab1, type: 3}

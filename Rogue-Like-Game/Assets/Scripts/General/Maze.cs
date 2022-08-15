@@ -193,7 +193,7 @@ public class Maze : MonoBehaviour
 
     public void GenerateMap()
     {
-        Debug.Log("Called");
+        
         //Instantiate(TemplateData.BossStairRoom, algorithm.goalLocation, Quaternion.identity);
         for (int z = 0; z < size.y; z++)
         {

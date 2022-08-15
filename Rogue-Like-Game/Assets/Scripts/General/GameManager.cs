@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject miniMap;
     private GameObject bossDoor;
+
+   
+
     public enum BossEnum
     {
         Dragon,
@@ -24,8 +27,24 @@ public class GameManager : MonoBehaviour
         Syndra
     };
     
+    
     public BossEnum GeneratedBoss;
+
     private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
     {
         instance = this;
         time *= 60;
@@ -33,17 +52,12 @@ public class GameManager : MonoBehaviour
         canCountDown = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        FindObjectOfType<PlayerClass>().deathEvent += OnPlayerDeath;
+        GeneratedBoss = (BossEnum)RNG.RngCallRange(0, 3);
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-        FindObjectOfType<PlayerClass>().deathEvent += OnPlayerDeath;
-        GeneratedBoss = (BossEnum)RNG.RngCallRange(0, 3);
-       
-        
-    }
+  
 
     // Update is called once per frame
     void Update()
