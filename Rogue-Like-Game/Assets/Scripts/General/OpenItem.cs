@@ -21,16 +21,16 @@ public class OpenItem : MonoBehaviour
 
     private MeshFilter _filter;
 
-    [System.NonSerialized]
+    
     public GameObject item;
 
-    [System.NonSerialized]
+   
     public bool itemGenerated;
 
-    [System.NonSerialized]
+   
     public ChestType type;
 
-    [System.NonSerialized]
+   
     public ItemClass itemClass;
 
     [SerializeField] private TextAsset dialogueText;

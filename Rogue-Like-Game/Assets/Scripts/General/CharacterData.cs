@@ -21,16 +21,21 @@ namespace General
 
         public void Initialise()
         {
-            values = Instantiate(values);
-            values.myStats.level = RNG.RngCallRange(MinLevel, MaxLevel + 1);
+            CharacterBase = (CharacterBase) Instantiate(CharacterBase);
+           Level = values.myStats.level = RNG.RngCallRange(MinLevel, MaxLevel + 1);
             FindObjectOfType<ChooseCharacterScript>().DisplayStats();
         }
         public void Spawn(Vector3 InitialPos, Vector3 finalPos, Transform parent, int index)
         {
+            //CharacterBase = (CharacterBase) Instantiate(CharacterBase);
             GameObject Ally = Instantiate(model, InitialPos,  Quaternion.identity, parent);
-             Ally.GetComponent<NavMeshAgent>().Warp(finalPos);
-             Ally.GetComponent<AllyClass>().LoadStats(values, CharacterBase);
+            Ally.GetComponent<NavMeshAgent>().Warp(finalPos);
+            Ally.GetComponent<AllyClass>().values = values;
+            Ally.GetComponent<AllyClass>().Level = Level;
+            Ally.GetComponent<AllyClass>().SetUp();
+            Ally.GetComponent<AllyClass>().OnLevelUp();
              Ally.GetComponent<PartyFollow>().index = index;
+            
         }
     }
 }

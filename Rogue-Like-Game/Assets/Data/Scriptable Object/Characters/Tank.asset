@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1653712210990167277, guid: a4f408538a295a244af12819ddb91a3f, type: 3}
   CharacterBase: {fileID: 11400000, guid: 1f05bc93140e7e447b3fce544f5143af, type: 2}
-  values: {fileID: 11400000, guid: 1300eae4826a0104fb451a4fe075d602, type: 2}
+  values: {fileID: 11400000, guid: 8b8e62956bc9252499a34a0fffa3b47c, type: 2}
   MinLevel: 10
-  MaxLevel: 30
+  MaxLevel: 50
   Level: 0

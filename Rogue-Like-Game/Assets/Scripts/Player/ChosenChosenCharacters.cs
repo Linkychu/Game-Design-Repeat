@@ -29,6 +29,8 @@ namespace Player
 
         public void ReRollCharacter1()
         {
+            if(characters == null)
+                return;
             chosenCharacter1 = Instantiate(characters[RNG.RngCallRange(0, characters.Length)]);
             chosenCharacter1.Initialise();
 
@@ -36,12 +38,16 @@ namespace Player
         
         public void ReRollCharacter2()
         {
+            if(characters == null)
+                return;
             chosenCharacter2 = Instantiate(characters[RNG.RngCallRange(0, characters.Length)]);
             chosenCharacter2.Initialise();
         }
         
         public void ReRollCharacter3()
         {
+            if(characters == null)
+                return;
             chosenCharacter3 = Instantiate(characters[RNG.RngCallRange(0, characters.Length)]);
             chosenCharacter3.Initialise();
         }

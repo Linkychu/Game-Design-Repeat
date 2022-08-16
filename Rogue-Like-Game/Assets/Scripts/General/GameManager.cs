@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using TMPro;
 using UnityEngine;
 
@@ -104,6 +105,11 @@ public class GameManager : MonoBehaviour
             float seconds = Mathf.FloorToInt(countDownTimer % 60);
 
             text.text = $"{minutes:00} : {seconds:00}";
+        }
+
+        if (countDownTimer <= 0)
+        {
+            PlayerManager.instance.players[0].GetComponent<PlayerClass>().deathEvent();
         }
     }
 }

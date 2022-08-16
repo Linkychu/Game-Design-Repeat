@@ -1,28 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using General;
 using Player;
 using UnityEngine;
 
 public class AllyClass : CharacterClass, IDamageable, IBoostable
 {
-    [HideInInspector] public bool canBoost;
-
-    public CharacterValues myValues;
+   public int Level;
     private void Awake()
     {
-        
-        gameObject.name = charBase.Name;
-        
+       
     }
 
-    internal void LoadStats(CharacterValues value, CharacterBase characterBase)
+    public void SetUp()
     {
-        values = (CharacterValues) Instantiate(value);
-        charBase = (CharacterBase) Instantiate(characterBase);
+        values = Instantiate(values);
+        ModifyStat(attributes, 1, 1, 1);
+        values.myStats.level = Level;
+        
+        charBase = Instantiate(charBase);
+        level = new Level(values.myStats.level, OnLevelUp);
 
+       
+       
+        SetUpCharacter();
     }
-    
 
     
     public override void Death()

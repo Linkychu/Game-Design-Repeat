@@ -696,8 +696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charBase: {fileID: 11400000, guid: 1f05bc93140e7e447b3fce544f5143af, type: 2}
-  isSetLevel: 0
-  values: {fileID: 11400000, guid: 1300eae4826a0104fb451a4fe075d602, type: 2}
+  isSetLevel: 1
+  values: {fileID: 11400000, guid: 8b8e62956bc9252499a34a0fffa3b47c, type: 2}
   HealthBar: {fileID: 5718581275224563482}
   gradient:
     serializedVersion: 2
@@ -777,8 +777,7 @@ MonoBehaviour:
     MAX_LEVEL: 0
   boostEffect: {fileID: 3624666370329723100, guid: ebe2d4c7374acc64aa07f2d195bfa4a1, type: 3}
   isStatsBoosted: 0
-  canBoost: 0
-  myValues: {fileID: 0}
+  Level: 0
 --- !u!114 &2944627213845787477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,7 +808,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 4096
-  angle: 270
+  angle: 360
   enemyDetectionAmount: 1
   speedRate: 2
 --- !u!195 &2253644578738365995

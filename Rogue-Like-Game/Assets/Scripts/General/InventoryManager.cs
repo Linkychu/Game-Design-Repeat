@@ -93,7 +93,6 @@ public class InventoryManager : MonoBehaviour
        
         OpenedInventory = !OpenedInventory;
         onInventoryOpen();
-        UpdateSlots();
         inventoryCanvas.SetActive(OpenedInventory);
         //Cursor.visible = OpenedInventory;
         if (Cursor.lockState == CursorLockMode.Locked && Cursor.visible == false)

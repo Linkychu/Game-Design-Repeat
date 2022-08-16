@@ -10,23 +10,21 @@ public class DisplayPlayerStatus : MonoBehaviour
 {
     public List<Image> icons = new List<Image>();
 
-    private List<Button> buttons = new List<Button>();
+    public List<Button> buttons = new List<Button>();
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
         
     }
 
 
-    private void OnEnable()
+    public void OnEnable()
     {
         for (int i = 0; i < icons.Count; i++)
         {
-            icons[i].color = PlayerManager.instance.playerSpriteColors[i];
-            buttons.Add(icons[i].GetComponentInChildren<Button>());
+            
             Transform player = PlayerManager.instance.players[i];
-            CharacterClass playerStats = player.GetComponent<CharacterClass>();
+           var playerStats = i == 0 ? player.GetComponent<CharacterClass>() : player.GetComponent<AllyClass>();
             buttons[i].GetComponentInChildren<TextMeshProUGUI>().text =
                 $"Name : {player.name} \n Level: {playerStats.values.myStats.level} \n Health: {playerStats.values.myStats.currentHP} / {playerStats.values.myStats.MaxHP} \n Mana: {playerStats.values.myStats.currentMana} / {playerStats.values.myStats.maxMana}";
            

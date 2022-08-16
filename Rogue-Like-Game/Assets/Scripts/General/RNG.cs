@@ -18,14 +18,16 @@ public class RNG : MonoBehaviour
     public static Random random;
     private void Awake()
     {
-        if(isNotAnInstance == false)
-            return;
+      
         if (RandomController == null)
             
         {
             RandomController = this;
-            DontDestroyOnLoad(gameObject);
-                
+            if (!isNotAnInstance)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
+
         }
         
         else

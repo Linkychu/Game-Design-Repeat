@@ -25,6 +25,9 @@ public class ChooseCharacterScript : MonoBehaviour
     void Start()
     {
         loadingScreen.SetActive(false);
+        charactersRef.chosenCharacter1 = null;
+        charactersRef.chosenCharacter2 = null;
+        charactersRef.chosenCharacter3 = null;
        charactersRef.ReRollCharacters();
        
        

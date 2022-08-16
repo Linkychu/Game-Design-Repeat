@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14506948, g: 0.3052968, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 4096
-  angle: 270
+  angle: 360
   enemyDetectionAmount: 1
   speedRate: 2
 --- !u!136 &3614164086542803060
@@ -1679,8 +1679,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charBase: {fileID: 11400000, guid: 7f39684f86b030e4aa157d50b465cfee, type: 2}
-  isSetLevel: 0
-  values: {fileID: 11400000, guid: 1300eae4826a0104fb451a4fe075d602, type: 2}
+  isSetLevel: 1
+  values: {fileID: 11400000, guid: ac1e840783f9ab6449b3e42e9a7bd7cf, type: 2}
   HealthBar: {fileID: 2642955423138210840}
   gradient:
     serializedVersion: 2
@@ -1760,8 +1760,7 @@ MonoBehaviour:
     MAX_LEVEL: 0
   boostEffect: {fileID: 3624666370329723100, guid: ebe2d4c7374acc64aa07f2d195bfa4a1, type: 3}
   isStatsBoosted: 0
-  canBoost: 0
-  myValues: {fileID: 0}
+  Level: 0
 --- !u!114 &283748638885772717
 MonoBehaviour:
   m_ObjectHideFlags: 0

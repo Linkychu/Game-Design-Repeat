@@ -16,5 +16,5 @@ MonoBehaviour:
   CharacterBase: {fileID: 11400000, guid: 658398c5624962744883d241fdd59c8e, type: 2}
   values: {fileID: 11400000, guid: 1300eae4826a0104fb451a4fe075d602, type: 2}
   MinLevel: 10
-  MaxLevel: 30
+  MaxLevel: 50
   Level: 0

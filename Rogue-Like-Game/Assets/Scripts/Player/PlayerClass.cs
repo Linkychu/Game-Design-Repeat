@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using General;
 using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,6 +26,11 @@ public class PlayerClass : CharacterClass, IDamageable, IHealable, IBoostable
         
         gameObject.name = charBase.Name;
         values.myStats.level = Level;
+        level = new Level(values.myStats.level, OnLevelUp);
+
+       
+        ModifyStat(attributes, 1, 1, 1);
+        SetUpCharacter();
     }
 
     private void LateUpdate()

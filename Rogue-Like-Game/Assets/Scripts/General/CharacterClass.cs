@@ -81,14 +81,16 @@ public class CharacterClass : MonoBehaviour, IDamageable
         if (!isPlayer && !isSetLevel)
         {
             values.myStats.level = RNG.RngCallRange(minLevel, maxLevel);
+            level = new Level(values.myStats.level, OnLevelUp);
+
+       
+            ModifyStat(attributes, 1, 1, 1);
+            SetUpCharacter();
            
         }
         
-        level = new Level(values.myStats.level, OnLevelUp);
-
-       
-        ModifyStat(attributes, 1, 1, 1);
-        SetUpCharacter();
+        
+      
         //OnLevelUp();
     }
     
@@ -134,7 +136,7 @@ public class CharacterClass : MonoBehaviour, IDamageable
         
         else if (gameObject.CompareTag("Ally"))
         {
-            levelText.text = $" Name: {charBase.Name} \n Level: {values.myStats.level}";
+            levelText.text = $" Name: {charBase.Name} \n Level: {level.currentLevel}";
         }
 
         else
@@ -143,7 +145,8 @@ public class CharacterClass : MonoBehaviour, IDamageable
         }
         
     }
-    void SetUpCharacter()
+
+    protected void SetUpCharacter()
     {
         
        IncreaseStats();
@@ -205,9 +208,9 @@ public class CharacterClass : MonoBehaviour, IDamageable
         int result = Mathf.FloorToInt((((baseStat) * 2 + statEXP * currentLevel) / 25) + currentLevel + rate);
         return result;
     }
-    
-  
-    private static void ModifyStat(Attributes Stats, float amountX, float amountY, float amountZ)
+
+
+    protected static void ModifyStat(Attributes Stats, float amountX, float amountY, float amountZ)
     {
         Stats.A_Modifier = amountX;
         Stats.D_Modifier = amountY;

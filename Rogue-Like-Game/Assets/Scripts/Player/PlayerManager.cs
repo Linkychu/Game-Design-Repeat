@@ -17,7 +17,7 @@ namespace Player
 
         public List<Transform> Allies = new List<Transform>();
 
-        public CharacterData[] models;
+       public ChosenChosenCharacters dataModels;
 
 
         public bool ableToSpawnAllies;
@@ -36,7 +36,8 @@ namespace Player
         private GameObject model;
 
         private int count;
-
+        List<CharacterData> models = new List<CharacterData>();
+        
         private List<GameObject> SpawnedModels = new List<GameObject>();
         private void Awake()
         {
@@ -81,6 +82,10 @@ namespace Player
         public void SpawnAllies()
         {
             allyObject.position = players[0].position;
+            
+            models.Add(dataModels.chosenCharacter1);
+            models.Add(dataModels.chosenCharacter2);
+            models.Add(dataModels.chosenCharacter3);
             for (int i = 0; i < Allies.Count; i++)
             {
                 models[i].Spawn(new Vector3(Allies[i].position.x, -2f, Allies[i].position.z), new Vector3(Allies[i].position.x, players[0].transform.position.y, Allies[i].position.z), Allies[i].transform, i);
@@ -128,14 +133,29 @@ namespace Player
             }
             transform.position = Vector3.zero;
 
-            players[0].position = spawnPos.transform.position;
+           
+          
             
             StartCoroutine(Place());
         }
 
         IEnumerator Place()
         {
+
+            players[0].position = Vector3.zero;
+            yield return null;
             
+            if (spawnPos == null)
+            {
+                spawnPos = GameObject.FindWithTag("SpawnPos").transform;
+            }
+            else
+            {
+                Debug.Log(spawnPos.position);
+                players[0].position = spawnPos.transform.position;
+                Debug.Log("spawn");
+            }
+           
             yield return new WaitUntil(() => players[0].GetComponent<CharacterController>().isGrounded);
                 //allyObject.position = new Vector3(players[0].position.x, players[0].position.y, players[0].position.z);
 
@@ -151,9 +171,6 @@ namespace Player
 
                     
             }
-            
-            
-            Debug.Log("work");
             
         }
 
